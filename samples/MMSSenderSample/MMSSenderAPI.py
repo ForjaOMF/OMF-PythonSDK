@@ -1,4 +1,14 @@
 # -*- coding: cp1252 -*-
+#objetivo.>  Copyright©   Este programa es software libre: usted puede redistribuirlo y/o
+#modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el 
+#Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior. 
+#Este programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera
+#la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles 
+#de la Licencia Pública General GNU para obtener una información más detallada. Debería haber recibido
+#una copia de la Licencia Pública General GNU junto a este programa.
+#En caso contrario, consulte <http://www.gnu.org/licenses/>.
+#open@open.movilforum.com
+
 import httplib, urllib, urlparse
 
 class MMSSender :
@@ -6,18 +16,18 @@ class MMSSender :
     login = ''
     user = ''
     cookie = ''
-    server = 'multimedia.movistar.es'
+    server = 'espaciopersonal.movistar.es/authenticate'
 
     def Login(self, login, pwd) :
         """Performs login to MMS service
             Input:    login=String with user's telephone number
                       pwd=String with user's password"""
 
-        print 'Login... (http://' + self.server + '/)'
+        print 'Login... (https://' + self.server + '/)'
 
         # We try to access http://multimedia.movistar.es/
         headers = {"User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection" :  "Keep-Alive"}
-        conn=httplib.HTTPConnection(self.server)
+        conn=httplib.HTTPSConnection(self.server)
         conn.request ("GET", "/", None, headers)
         resp=conn.getresponse()
         if resp.status == 302 :
@@ -37,9 +47,9 @@ class MMSSender :
                 # Sending login data
                 params = urllib.urlencode ({'TM_ACTION': 'LOGIN', 'variant': 'mensajeria', 'locale': 'sp-SP', 'client': 'html-msie-7-winxp', 'directMessageView': '', 'uid': '', 'uidl': '', 'folder': '', 'remoteAccountUID': '', 'login': '1', 'TM_LOGIN': login, 'TM_PASSWORD': pwd})
                 headers = {"Content-type":"application/x-www-form-urlencoded", "User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection" :  "Keep-Alive"}
-                conn=httplib.HTTPConnection(self.server)
+                conn=httplib.HTTPSConnection(self.server)
                 cookieList = cookieSession.split('=')
-                url = '/do/dologin;jsessionid='+cookieList[-1]
+                url = '/do/login;jsessionid='+cookieList[-1]
                 self.user = cookieList[-1]
                 conn.request ("POST", url, params, headers)
                 resp=conn.getresponse()
@@ -58,7 +68,7 @@ class MMSSender :
                 print 'Cookie: ' + self.cookie
 
                 headers2 = {"Accept": "*/*", "Accept-Encoding": "gzip, deflate", "User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection": "Keep-Alive", "Cookie": self.cookie}
-                conn2=httplib.HTTPConnection(self.server)
+                conn2=httplib.HTTPSConnection(self.server)
                 conn2.request("GET", '/do/multimedia/create?l=sp-SP&v=mensajeria', None, headers2)
                 resp2=conn2.getresponse()
                 conn2.close()
@@ -91,7 +101,7 @@ class MMSSender :
         contentType = "multipart/form-data; boundary="+separator
         headers = {"Content-type": contentType, "Accept-Language": "es", "Accept": "*/*", "User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection": "Keep-Alive", "Accept-Encoding": "gzip, deflate", "Cache-Control": "no-cache", "Cookie": self.cookie}
 
-        conn=httplib.HTTPConnection(self.server)
+        conn=httplib.HTTPSConnection(self.server)
         conn.request ("POST", "/do/multimedia/uploadEnd", data, headers)
         resp=conn.getresponse()
         response = resp.read()
@@ -124,7 +134,7 @@ class MMSSender :
         contentType = "multipart/form-data; boundary="+separator
         headers = {"Content-type": contentType, "Accept-Language": "es", "Accept": "*/*", "User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection": "Keep-Alive", "Accept-Encoding": "gzip, deflate", "Cache-Control": "no-cache", "Cookie": self.cookie}
 
-        conn=httplib.HTTPConnection(self.server)
+        conn=httplib.HTTPSConnection(self.server)
         conn.request ("POST", "/do/multimedia/uploadEnd", data, headers)
         resp=conn.getresponse()
         response = resp.read()
@@ -157,7 +167,7 @@ class MMSSender :
         contentType = "multipart/form-data; boundary="+separator
         headers = {"Content-type": contentType, "Accept-Language": "es", "Accept": "*/*", "User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection": "Keep-Alive", "Accept-Encoding": "gzip, deflate", "Cache-Control": "no-cache", "Cookie": self.cookie}
 
-        conn=httplib.HTTPConnection(self.server)
+        conn=httplib.HTTPSConnection(self.server)
         conn.request ("POST", "/do/multimedia/uploadEnd", data, headers)
         resp=conn.getresponse()
         response = resp.read()
@@ -194,10 +204,10 @@ class MMSSender :
 
         contentType = "multipart/form-data; boundary="+separator
 
-        referer = 'http://multimedia.movistar.es/do/multimedia/show'
+        referer = 'https://espaciopersonal.movistar.es/do/multimedia/show'
         headers = {"Content-Type": contentType, "Accept-Language": "es", "Accept": "image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-ms-application, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-ms-xbap, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*", "User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection": "Keep-Alive", "Accept-Encoding": "gzip, deflate", "Cache-Control": "no-cache", "Cookie": self.cookie, "Referer": referer, "Connection": "Keep-Alive", "UA-CPU": "x86"}
 
-        conn=httplib.HTTPConnection(self.server)
+        conn=httplib.HTTPSConnection(self.server)
         conn.request ("POST", "/do/multimedia/send?l=sp-SP&v=mensajeria", data, headers)
         resp=conn.getresponse()
         response = resp.read()
@@ -213,7 +223,7 @@ class MMSSender :
         paramsLogout = urllib.urlencode ({'TM_ACTION': 'LOGOUT'})
 
         headersLogout = {"Content-type":"application/x-www-form-urlencoded", "User-Agent" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Connection" :  "Keep-Alive", "Cookie": self.cookie}
-        connLogout=httplib.HTTPConnection(self.server)
+        connLogout=httplib.HTTPSConnection(self.server)
         connLogout.request ("POST", "/do/logout?l=sp-SP&v=mensajeria",paramsLogout, headersLogout)
         respLogout=connLogout.getresponse()
 
