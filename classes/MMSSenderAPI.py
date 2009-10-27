@@ -1,11 +1,11 @@
 # -*- coding: cp1252 -*-
-#objetivo.>  Copyright©   Este programa es software libre: usted puede redistribuirlo y/o
-#modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el 
-#Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior. 
-#Este programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera
-#la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles 
-#de la Licencia Pública General GNU para obtener una información más detallada. Debería haber recibido
-#una copia de la Licencia Pública General GNU junto a este programa.
+#objetivo.>  CopyrightÂ©   Este programa es software libre: usted puede redistribuirlo y/o
+#modificarlo bajo los tÃˆrminos de la Licencia PË™blica General GNU publicada por la FundaciÃ›n para el 
+#Software Libre, ya sea la versiÃ›n 3 de la Licencia, o (a su elecciÃ›n) cualquier versiÃ›n posterior. 
+#Este programa se distribuye con la esperanza de que sea Ë™til, pero SIN GARANTÃ•A ALGUNA; ni siquiera
+#la garantÃŒa implÃŒcita MERCANTIL o de APTITUD PARA UN PROPâ€SITO DETERMINADO. Consulte los detalles 
+#de la Licencia PË™blica General GNU para obtener una informaciÃ›n mÂ·s detallada. DeberÃŒa haber recibido
+#una copia de la Licencia PË™blica General GNU junto a este programa.
 #En caso contrario, consulte <http://www.gnu.org/licenses/>.
 #open@open.movilforum.com
 
