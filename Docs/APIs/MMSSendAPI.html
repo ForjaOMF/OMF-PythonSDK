@@ -1,0 +1,104 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../Style.css">
+	<title>Open movilforum Python SDK</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		<h1><a href="http://open.movilforum.com"></a></h1>
+	</div>
+
+	<div id="sidebar">
+				<center><h3><a target="_parent" href="../Index.html">Python SDK r1.0</a></h3></center>
+	<ul>
+		<li><a target="_parent" href="../Start.html">Getting Started</a><br></li>
+		<ul>
+			<li><a target="_parent" href="../Whats.html">What's Open movilforum SDK?</a><br></li>
+			<li><a target="_parent" href="../Tools.html">Development Tools</a><br></li>
+			<li><a target="_parent" href="../ReleaseNotes.html">Release Notes</a><br></li>
+		</ul><br />
+		<li><a target="_parent" href="../APIs.html">APIs</a><br></li>
+		<ul>
+			<li><a target="_parent" href="SMSSendAPI.html">SMS Send</a></li>
+			<li><a target="_parent" href="SMSReceiveAPI.html">SMS Receive</a></li>
+			<li><a target="_parent" href="CopiagendaAPI.html">Copiagenda</a></li>
+			<li><a target="_parent" href="LocalizameAPI.html">Local&iacute;zame</a></li>
+			<li><a target="_parent" href="AutoWPAPI.html">Auto WapPush</a></li>
+			<li><a target="_parent" href="MMSSendAPI.html">MMS Send</a></li>
+			<li><a target="_parent" href="SMS20API.html">SMS 2.0</a></li>
+		</ul><br />
+		<li><a target="_parent" href="../Samples.html">Sample Code</a><br></li>
+		<ul>
+			<li><a target="_parent" href="../Samples/SMSSenderSample.html">SMS Sender</a></li>
+			<li><a target="_parent" href="../Samples/SMSReceiverSample.html">SMS Receiver</a></li>
+			<li><a target="_parent" href="../Samples/CopiagendaSample.html">Copiagenda</a></li>
+			<li><a target="_parent" href="../Samples/LocalizameSample.html">Local&iacute;zame</a></li>
+			<li><a target="_parent" href="../Samples/AutoWPSample.html">Auto WapPush</a></li>
+			<li><a target="_parent" href="../Samples/MMSSenderSample.html">MMS Sender</a></li>
+			<li><a target="_parent" href="../Samples/SMS20Sample.html">SMS 2.0</a></li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<h3>MMSSenderAPI</h3>
+
+		<b>class MMSSender</b><br>
+		<font size=-2>
+			&nbsp;&nbsp;&nbsp;&nbsp;<b>Source file(s): </b><a href="/sdk/PythonSDKr10/Classes/MMSSenderAPI.py">MMSSenderAPI.py</a>
+		</font><br><br>
+
+		This class provides the capability of composing and sending MMS messages through an HTTP interface.<br><br>
+
+		The MMS message can contain text, image, audio and video but you should take into account that mobile phone cannot display image or audio while playing video, so it is not advisable to insert a video file if image or audio has been inserted previously.<br><br>
+
+		To send a multimedia message you have to take the following steps:
+		<ol>
+			<li>First of all, you have to log in with your telephone number and password</li>
+			<li>Then you can begin to add attachment files. These attachment files can be images, audio files and video files. The maximum message size, including all attachments, is 300kb.</li>
+			<li>To send the composed message you will have to provide the destination (telephone number or email address), message subject and message text.</li>
+		</ol>
+		<br>
+		This API is available for all movistar subscribers in Spain.<br><br>
+		<b>Methods</b>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="MMSSendAPI_Login.html">Login</a></td>
+				<td>Performs login to MMS service</td>
+			</tr>
+			<tr>
+				<td><a href="MMSSendAPI_InsertImage.html">InsertImage</a></td>
+				<td>Inserts an image in the multimedia message</td>
+			</tr>
+			<tr>
+				<td><a href="MMSSendAPI_InsertAudio.html">InsertAudio</a></td>
+				<td>Inserts an audio file in the multimedia message</td>
+			</tr>
+			<tr>
+				<td><a href="MMSSendAPI_InsertVideo.html">InsertVideo</a></td>
+				<td>Inserts a video file in the multimedia message</td>
+			</tr>
+			<tr>
+				<td><a href="MMSSendAPI_SendMessage.html">SendMessage</a></td>
+				<td>Sends an MMS message</td>
+			</tr>
+			<tr>
+				<td><a href="MMSSendAPI_Logout.html">Logout</a></td>
+				<td>Performs logout of MMS service</td>
+			</tr>
+		</table>
+
+		<br>
+		<b>Sample Code</b>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="../Samples/MMSSenderSample.html">MMS Sender</a></td>
+				<td>Sample code to show how to use MMSSender API</td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+</body>
+</html>

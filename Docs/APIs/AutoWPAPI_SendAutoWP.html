@@ -1,0 +1,80 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../Style.css">
+	<title>Open movilforum Python SDK</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		<h1><a href="http://open.movilforum.com"></a></h1>
+	</div>
+
+	<div id="sidebar">
+				<center><h3><a target="_parent" href="../Index.html">Python SDK r1.0</a></h3></center>
+	<ul>
+		<li><a target="_parent" href="../Start.html">Getting Started</a><br></li>
+		<ul>
+			<li><a target="_parent" href="../Whats.html">What's Open movilforum SDK?</a><br></li>
+			<li><a target="_parent" href="../Tools.html">Development Tools</a><br></li>
+			<li><a target="_parent" href="../ReleaseNotes.html">Release Notes</a><br></li>
+		</ul><br />
+		<li><a target="_parent" href="../APIs.html">APIs</a><br></li>
+		<ul>
+			<li><a target="_parent" href="SMSSendAPI.html">SMS Send</a></li>
+			<li><a target="_parent" href="SMSReceiveAPI.html">SMS Receive</a></li>
+			<li><a target="_parent" href="CopiagendaAPI.html">Copiagenda</a></li>
+			<li><a target="_parent" href="LocalizameAPI.html">Local&iacute;zame</a></li>
+			<li><a target="_parent" href="AutoWPAPI.html">Auto WapPush</a></li>
+			<li><a target="_parent" href="MMSSendAPI.html">MMS Send</a></li>
+			<li><a target="_parent" href="SMS20API.html">SMS 2.0</a></li>
+		</ul><br />
+		<li><a target="_parent" href="../Samples.html">Sample Code</a><br></li>
+		<ul>
+			<li><a target="_parent" href="../Samples/SMSSenderSample.html">SMS Sender</a></li>
+			<li><a target="_parent" href="../Samples/SMSReceiverSample.html">SMS Receiver</a></li>
+			<li><a target="_parent" href="../Samples/CopiagendaSample.html">Copiagenda</a></li>
+			<li><a target="_parent" href="../Samples/LocalizameSample.html">Local&iacute;zame</a></li>
+			<li><a target="_parent" href="../Samples/AutoWPSample.html">Auto WapPush</a></li>
+			<li><a target="_parent" href="../Samples/MMSSenderSample.html">MMS Sender</a></li>
+			<li><a target="_parent" href="../Samples/SMS20Sample.html">SMS 2.0</a></li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<h3>AutoWP::SendAutoWP</h3>
+
+		Sends a WapPush message to the user's own number<br><br>
+
+		<font face="Courier New">def SendAutoWP(self, login, pwd, url, text)</font><br><br>
+
+		<b>Parameters</b><br>
+		<i>login</i><br>
+		&nbsp;&nbsp;String with user's telephone number<br><br>
+		<i>pwd</i><br>
+		&nbsp;&nbsp;String with user's password<br><br>
+		<i>url</i><br>
+		&nbsp;&nbsp;String with message URL<br><br>
+		<i>text</i><br>
+		&nbsp;&nbsp;String with message text<br><br>
+
+		<b>Return</b><br>
+		Code received from service
+		<ul>
+			<li>0 - OK</li>
+			<li>1 - Invalid user format</li>
+			<li>2 - Invalid URL</li>
+			<li>3 - Invalid pasword format</li>
+			<li>4 - Access denied</li>
+			<li>5 - User is not registered</li>
+			<li>6 - Invalid password</li>
+			<li>7 - User registration expired</li>
+			<li>8 - Text format invalid</li>
+			<li>9 - Communication not established</li>
+			<li>-1 - Request error, missing or mistyped parameter</li>
+		</ul>
+
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../Style.css">
+	<title>Open movilforum Python SDK</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		<h1><a href="http://open.movilforum.com"></a></h1>
+	</div>
+
+	<div id="sidebar">
+				<center><h3><a target="_parent" href="../Index.html">Python SDK r1.0</a></h3></center>
+	<ul>
+		<li><a target="_parent" href="../Start.html">Getting Started</a><br></li>
+		<ul>
+			<li><a target="_parent" href="../Whats.html">What's Open movilforum SDK?</a><br></li>
+			<li><a target="_parent" href="../Tools.html">Development Tools</a><br></li>
+			<li><a target="_parent" href="../ReleaseNotes.html">Release Notes</a><br></li>
+		</ul><br />
+		<li><a target="_parent" href="../APIs.html">APIs</a><br></li>
+		<ul>
+			<li><a target="_parent" href="SMSSendAPI.html">SMS Send</a></li>
+			<li><a target="_parent" href="SMSReceiveAPI.html">SMS Receive</a></li>
+			<li><a target="_parent" href="CopiagendaAPI.html">Copiagenda</a></li>
+			<li><a target="_parent" href="LocalizameAPI.html">Local&iacute;zame</a></li>
+			<li><a target="_parent" href="AutoWPAPI.html">Auto WapPush</a></li>
+			<li><a target="_parent" href="MMSSendAPI.html">MMS Send</a></li>
+			<li><a target="_parent" href="SMS20API.html">SMS 2.0</a></li>
+		</ul><br />
+		<li><a target="_parent" href="../Samples.html">Sample Code</a><br></li>
+		<ul>
+			<li><a target="_parent" href="../Samples/SMSSenderSample.html">SMS Sender</a></li>
+			<li><a target="_parent" href="../Samples/SMSReceiverSample.html">SMS Receiver</a></li>
+			<li><a target="_parent" href="../Samples/CopiagendaSample.html">Copiagenda</a></li>
+			<li><a target="_parent" href="../Samples/LocalizameSample.html">Local&iacute;zame</a></li>
+			<li><a target="_parent" href="../Samples/AutoWPSample.html">Auto WapPush</a></li>
+			<li><a target="_parent" href="../Samples/MMSSenderSample.html">MMS Sender</a></li>
+			<li><a target="_parent" href="../Samples/SMS20Sample.html">SMS 2.0</a></li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<h3>SMS20API</h3>
+
+		<b>class SMS20</b><br>
+		<font size=-2>
+			&nbsp;&nbsp;&nbsp;&nbsp;<b>Source file(s): </b><a href="/sdk/PythonSDKr10/Classes/SMS20API.py">SMS20API.py</a>
+		</font><br><br>
+
+		This class provides access to the SMS2.0 service that allows us to send instant messages to our contacts through an HTTP interface.<br><br>
+
+		SMS 2.0 service gives you the capability to detect presence status of your contacts. You can chat with them via SMS messages when they are offline. If any of your contact is online, he will receive your messages instantly, as with other IMS services (MSN, Yahoo, etc.).<br><br>
+		This API allows you to perform the following operations:<br><br>
+		<ul>
+			<li>Log into the SMS2.0 service. You will only need your telephone number and password.
+			<li>Retrieve your contact list.
+			<li>Get presence status for your contacts.
+			<li>Add contacts to your contact list. You will only need your contact's telephone number.
+			<li>Poll for notifications from the service. These notifications can be:
+			<ul>
+				<li>Change in presence status for any of your contacts.
+				<li>New message received.
+				<li>Request from another user to add you to his/her contact list. You must respond to this notification allowing (or not) the other user to add you you.
+			</ul>
+			<li>Remove a contact from your list..
+			<li>Log out from the service.
+		</ul>
+		<br>
+		You can check billing information <a href="http://www.movistar.es/fwk/cda/controller/page/0,2190,8887_42768051_1737793_0_0,00.html#tarifas">here</a><br><br>
+		<b>Methods</b>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="SMS20API_Login.html">Login</a></td>
+				<td>Performs login to movistar web site</td>
+			</tr>
+			<tr>
+				<td><a href="SMS20API_Connect.html">Connect</a></td>
+				<td>Connects to SMS2.0 service</td>
+			</tr>
+			<tr>
+				<td><a href="SMS20API_Polling.html">Polling</a></td>
+				<td>Performs polling to search for new message notifications, contacts online, etc...</td>
+			</tr>
+			<tr>
+				<td><a href="SMS20API_AddContact.html">AddContact</a></td>
+				<td>Adds a contact to the user's contact list</td>
+			</tr>
+			<tr>
+				<td><a href="SMS20API_AuthorizeContact.html">AuthorizeContact</a></td>
+				<td>Authorizes a contact to be informed about our presence status</td>
+			</tr>
+			<tr>
+				<td><a href="SMS20API_DeleteContact.html">DeleteContact</a></td>
+				<td>Deletes a contact</td>
+			</tr>
+			<tr>
+				<td><a href="SMS20API_SendMessage.html">SendMessage</a></td>
+				<td>Sends a message to the destination contact</td>
+			</tr>
+			<tr>
+				<td><a href="SMS20API_Disconnect.html">Disconnect</a></td>
+				<td>Disconnects from SMS2.0 service</td>
+			</tr>
+		</table>
+
+		<br><br>
+		<b>class ContactsParser</b><br><br>
+
+		The <b>ContactsParser</b> class provides the functionality to parse XML to get your contact list<br><br>
+		<b>Methods</b>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="SMS20ContactsParser_GetContactList.html">GetContactList</a></td>
+				<td>Gets contact list</td>
+			</tr>
+		</table>
+
+		<br><br>
+		<b>class PresenceParser</b><br><br>
+
+		The <b>PresenceParser</b> class provides the functionality to parse XML received with the presence status of your contacts<br><br>
+		<b>Methods</b>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="SMS20PresenceParser_GetPresentsList.html">GetPresentsList</a></td>
+				<td>Gets present status list</td>
+			</tr>
+		</table>
+
+		<br><br>
+		<b>class MessageParser</b><br><br>
+
+		The <b>MessageParser</b> class provides the functionality to parse XML with a new message<br><br>
+		<b>Methods</b>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="SMS20MessageParser_GetMessage.html">GetMessage</a></td>
+				<td>Gets received message text</td>
+			</tr>
+		</table>
+
+		<br><br>
+		<b>class AuthRequestParser</b><br><br>
+
+		The <b>AuthRequestParser</b> class provides the functionality to find userId and transaction Id of the request from a contact to know your presence status<br><br>
+		<b>Methods</b>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="SMS20AuthRequestParser_GetUser.html">GetUser</a></td>
+				<td>Gets userId and transactionId from a request</td>
+			</tr>
+		</table>
+
+		<br>
+		<h3>Sample Code</h3>
+		<table border=1 width=100%>
+			<tr>
+				<td><a href="../Samples/SMS20Sample.html">SMS 2.0</a></td>
+				<td>Sample code to show how to use SMS2.0 service</td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+</body>
+</html>
